@@ -4,6 +4,7 @@ licenseTier: xsmall
 postMerge: 
   pattern: 
     - "./tests/*.test.ts"
+    - "./tests/*.test.js"
   strategy: 
     threshold: <5|100s|30m|6h>
     type: <commit|time>
