@@ -1,15 +1,19 @@
 ---
-framework: "jest"
-blocklist:
-  - "src/arith.test.js##2 + 3 = 5"
-postMerge:
-  pattern:
+framework: jest
+licenseTier: xsmall
+postMerge: 
+  pattern: 
     - "./tests/*.test.ts"
+  strategy: 
+    threshold: <5|100s|30m|6h>
+    type: <commit|time>
 preMerge:
   pattern:
-    - "./tests/*.test.ts"
+   - "./tests/*.test.ts"
 preRun:
-  - npm install
+     command:
+        - npm install
 postRun:
-  - node --version
-version: 2.0
+     command:
+        - node --version
+version: 2.1
