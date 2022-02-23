@@ -1,20 +1,15 @@
 ---
 framework: jest
-licenseTier: xsmall
-postMerge: 
-  pattern: 
-    - "./tests/*.test.ts"
-    - "./tests/*.test.js"
-  strategy: 
-    threshold: <5|100s|30m|6h>
-    type: <commit|time>
-preMerge:
-  pattern:
-   - "./tests/*.test.ts"
 preRun:
      command:
         - npm install
+preMerge:
+  pattern:
+    - "./tests/*.test.{js,ts}"
+postMerge: 
+  pattern: 
+    - "./tests/*.test.{js,ts}"
 postRun:
      command:
         - node --version
-version: 2.0
+version: 1.0
